@@ -38,7 +38,7 @@ const net = {
     y : 0,
     height : 10,
     width : 2,
-    color : "WHITE"
+    color : "red"
 }
 
 // draw a rectangle 
@@ -81,13 +81,13 @@ function drawNet(){
 }
 
 // draw text
-function drawText(text,x,y){
-    ctx.fillStyle = "#FFF";
+function drawText(text,x,y,color){
+    ctx.fillStyle = color;
     ctx.font = "75px fantasy";
     ctx.fillText(text, x, y);
 }
 
-// collision detection
+// collision detection b for ball and p for player
 function collision(b,p){
     p.top = p.y;
     p.bottom = p.y + p.height;
@@ -141,7 +141,7 @@ function update(){
         ball.velocityX = direction * ball.speed * Math.cos(angleRad);
         ball.velocityY = ball.speed * Math.sin(angleRad);
         
-        ball.speed += 0.1;
+        ball.speed += 0.2;
     }
 }
 
@@ -152,10 +152,10 @@ function clear(){
     drawRect(0, 0, canvas.width, canvas.height, "#000");
     
     // draw the user score 
-    drawText(user.score,canvas.width/4,canvas.height/5);
+    drawText(user.score,canvas.width/4,canvas.height/5,"blue");
     
     // draw the computer score 
-    drawText(com.score,3*canvas.width/4,canvas.height/5);
+    drawText(com.score,3*canvas.width/4,canvas.height/5,"green");
     
     // draw the middle line
     drawNet();
