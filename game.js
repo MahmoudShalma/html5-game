@@ -149,7 +149,7 @@ function update(){
 function clear(){
     
     // clear the canvas
-    drawRect(0, 0, canvas.width, canvas.height, "#000");
+    drawRect(0, 0, canvas.width, canvas.height, "black");
     
     // draw the user score 
     drawText(user.score,canvas.width/4,canvas.height/5,"blue");
